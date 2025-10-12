@@ -1,0 +1,11 @@
+.tab{
+    width: 2000px;
+    height: 50px;
+    background-color: antiquewhite;
+    display: flex;
+}
+
+.tab .icon{
+    width: 100px;
+    height: 50px;
+}
