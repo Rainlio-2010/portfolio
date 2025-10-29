@@ -1,11 +1,64 @@
 .tab{
-    width: 2000px;
-    height: 50px;
+    width: 1900px;
+    height: 75px;
     background-color: antiquewhite;
     display: flex;
+    flex-direction: row;
 }
 
-.tab .icon{
+.tab .menu{
+    margin-left: 100px;
+    width: 200px;
+    height: 75px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab .about-me{
+     width: 200px;
+    height: 75px;
+    background-color: rgb(185, 55, 15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab .carrer{
+     width: 200px;
+    height: 75px;
+    background-color: rgb(17, 19, 153);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tab .experience{
+     width: 200px;
+    height: 75px;
+    background-color: rgb(33, 221, 16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.tab .icon-1{
+    width: 200px;
+    height: 75px;
+    background-color: aquamarine;
+    position: relative;
+    left: 800px;
+}
+
+.text-tab{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.side{
     width: 100px;
-    height: 50px;
+    height: 1000px;
+    background-color: aliceblue;
 }
