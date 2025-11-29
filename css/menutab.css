@@ -1,64 +1,127 @@
-.tab{
-    width: 1900px;
+@keyframes colorAnimation{
+    0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
+
+
+
+
+
+
+
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.header{
+    width: 100%;
+    min-height: 75px;
     height: 75px;
-    background-color: antiquewhite;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
 }
+.icon-1{
+width: 100px;
+height: 100px;
+background-color: white;
+animation-name: colorAnimation;
+animation-duration: 4s;
+animation-iteration-count: infinite;
 
-.tab .menu{
-    margin-left: 100px;
-    width: 200px;
-    height: 75px;
-    background-color: aqua;
+}
+
+
+.table{
+    min-height: 50px;
+    width: 100%;
+    height: 50px;
+   
+    
+}
+.content{
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    flex-direction: column;
+    flex: 1;
 
-.tab .about-me{
-     width: 200px;
-    height: 75px;
-    background-color: rgb(185, 55, 15);
+}
+.main{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    flex: 1;
 }
-
-.tab .carrer{
-     width: 200px;
-    height: 75px;
-    background-color: rgb(17, 19, 153);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.tab .experience{
-     width: 200px;
-    height: 75px;
-    background-color: rgb(33, 221, 16);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-}
-
-.tab .icon-1{
-    width: 200px;
-    height: 75px;
-    background-color: aquamarine;
-    position: relative;
-    left: 800px;
-}
-
-.text-tab{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
-}
-
-.side{
+ .aside{
     width: 100px;
-    height: 1000px;
-    background-color: aliceblue;
+    min-width: 100px;
+    height: 100%;
+    
+}
+ .body{
+   flex: 1;
+   height: 100%;
+   min-width: 0;
+
+}
+
+body{
+    margin: 0px;
+}
+
+.item{
+    border-style: solid;
+   border-width: 1px;
+    border-color: rgb(155, 152, 152);
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.box-1{
+    width: 200px;
+    height: 75px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.box-2{
+    width: 200px;
+    height: 75px;
+    margin-left: auto;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact{
+    width: 125px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgb(236, 223, 104);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.con{
+    color: rgb(0, 0, 0);
+    text-decoration-line: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.Home{
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    text-decoration-line: none;
 }
