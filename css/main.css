@@ -1,0 +1,468 @@
+/* =========================================
+   1. Variables & Theme
+   ========================================= */
+:root {
+    /* Colors */
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #2d2d2d;
+
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --text-accent: #64ffda;
+    /* Cyan accent */
+
+    --accent-color: #64ffda;
+    --accent-hover: #4ac7aa;
+
+    --border-color: #333333;
+
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
+
+    /* Fonts */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Shadows */
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.3);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* =========================================
+   2. Reset & Global Styles
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-fast);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* =========================================
+   3. Layout Utilities
+   ========================================= */
+.full {
+    width: 100%;
+    max-width: 1200px;
+    /* Constrain max width for large screens */
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    background-color: transparent;
+    /* Remove old gray background */
+    box-shadow: none;
+    border: none;
+    display: block;
+    /* Reset old flex styles */
+    height: auto;
+}
+
+section {
+    padding: var(--spacing-xl) 0;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* =========================================
+   4. Navigation
+   ========================================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(18, 18, 18, 0.9);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-xl);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    padding: 0;
+}
+
+.navbar a {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    color: var(--accent-color);
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width var(--transition-fast);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* =========================================
+   5. Intro Section
+   ========================================= */
+.intro {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    /* Clean background, relies on body bg */
+    background: transparent;
+    margin-bottom: var(--spacing-xl);
+}
+
+.basic h1 {
+    font-size: 4rem;
+    /* Modern large typography */
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.Portfolio-symbole {
+    width: 120px;
+    height: auto;
+    margin: var(--spacing-md) 0;
+    filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.3));
+    /* Glow effect */
+}
+
+.name {
+    /* Reset existing flex styles */
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.name p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* =========================================
+   6. About Me Section
+   ========================================= */
+.about-me {
+    display: flex;
+    flex-wrap: wrap;
+    /* Responsive wrap */
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: transparent;
+    /* Remove old bg */
+    border: none;
+    border-top: 1px solid var(--border-color);
+    /* Subtle separator */
+}
+
+.left-section {
+    flex: 1;
+    min-width: 300px;
+    background-color: transparent;
+    /* Remove old bg */
+    display: block;
+    /* Reset flex center */
+    padding: 0;
+}
+
+.title {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: var(--spacing-md);
+    justify-content: flex-start;
+    /* Align left */
+    width: 100%;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+}
+
+.title h1::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    bottom: -8px;
+    left: 0;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.description,
+.contact-info {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    text-align: left;
+}
+
+.picture {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    /* Remove old bg */
+}
+
+.profile-picture {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.profile-picture:hover {
+    transform: scale(1.02);
+}
+
+/* =========================================
+   7. Education Section
+   ========================================= */
+.education {
+    background-color: transparent;
+    /* Remove old bg */
+    padding: var(--spacing-xl) var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+}
+
+.education-title {
+    background: transparent;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: var(--spacing-lg);
+}
+
+.education-title h1 {
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.education-title h1::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    bottom: -8px;
+    left: 0;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.education-content {
+    width: 100%;
+    /* Let height be determined by aspect ratio or content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.school-slideshow-container {
+    width: 100%;
+    max-width: 800px;
+    /* Limit max width for better aesthetic */
+    aspect-ratio: 16 / 9;
+    /* Enforce a cinematic aspect ratio */
+    display: flex;
+    background-color: var(--bg-tertiary);
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.school-slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.school-slide.active {
+    display: flex;
+}
+
+.education-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ensure images fit nicely */
+    display: block;
+    padding: var(--spacing-sm);
+    /* Add some breathing room inside the frame */
+}
+
+
+
+
+.experience {
+    background-color: transparent;
+    /* Remove old bg */
+    padding: var(--spacing-xl) var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+}
+
+.experience-title {
+    background: transparent;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: var(--spacing-lg);
+}
+
+.experience-title h1 {
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.experience-title h1::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    bottom: -8px;
+    left: 0;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.experience-content {
+    width: 100%;
+    /* Let height be determined by aspect ratio or content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.skills {
+    background-color: transparent;
+    padding: var(--spacing-xl) var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+}
+
+.skills-title {
+    background: transparent;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: var(--spacing-lg);
+}
+
+.skills-title h1 {
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.skills-title h1::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    bottom: -8px;
+    left: 0;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.skills-content {
+    width: 100%;
+    /* Let height be determined by aspect ratio or content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
